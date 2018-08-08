@@ -45,11 +45,13 @@ http.createServer((req, res) => {
   //  get post put
     let id = parseInt(query.id)
 
-
     switch (req.method) { // ?id = 1
       case 'GET':
         if (id) { // 查询一个
-          
+          read(function (books) {
+            let result = books.filter(item => item.bookId === id)
+            res.end(JSON.stringify(result))
+          })
         } else { // 获取所有图书
           read(function (books) {
             res.end(JSON.stringify(books.reverse()))
