@@ -3,7 +3,7 @@
     <store-header :show-back="true">Book List</store-header>
     <div class="content">
       <ul class="list">
-        <li v-for="book in bookList" :key="book.bookId">
+        <li v-for="book in bookList" :key="book.bookId" @click = "routeToId(book.bookId)">
           <div class="imgwrapper">
             <img :src="book.bookCover" alt="">
           </div>
@@ -11,6 +11,7 @@
             <div class="name">{{book.bookName}}</div>
             <div class="detail">{{book.bookInfo}}</div>
             <div class="price">${{book.bookPrice}}</div>
+
           </div>
 
         </li>
@@ -35,6 +36,17 @@ export default {
   methods: {
     async getAllBook () {
       this.bookList = await getAllBook()
+    },
+    routeToId (id) {
+      this.$router.push({
+        name: 'Detail',
+        params: {
+          bid: id
+        }
+      })
+    },
+    addCollect () {
+
     }
   },
   created () {

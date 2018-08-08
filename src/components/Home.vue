@@ -6,7 +6,7 @@
       <div class="container">
         <h3>热门图书</h3>
         <ul class="hot">
-          <li v-for="book in hotBook" :key="book.bookId">
+          <li v-for="book in hotBook" :key="book.bookId" @click="routeToId(book.bookId)">
             <img :src="book.bookCover" alt="">
             <span>{{book.bookName}}</span>
             <span>{{book.bookInfo}}</span>
@@ -49,6 +49,14 @@ export default {
       // let {data: hotBook} = await getHotBk()
       let hotBook = await getHotBk()
       this.hotBook = hotBook
+    },
+    routeToId (id) {
+      this.$router.push({
+        name: 'Detail',
+        params: {
+          bid: id
+        }
+      })
     }
   }
 }

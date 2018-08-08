@@ -22,3 +22,7 @@ export let getHotBk = () => {
 export let getAllBook = () => {
   return axios.get('/book')
 }
+
+export let getBookById = (bid) => {
+  return axios.get('/book?id=' + bid)
+}

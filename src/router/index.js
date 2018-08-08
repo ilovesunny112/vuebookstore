@@ -30,7 +30,7 @@ export default new Router({
       component: Collect
     },
     {
-      path: '/detail/:id',
+      path: '/detail/:bid',
       name: 'Detail',
       component: Detail
     },
