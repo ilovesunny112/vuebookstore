@@ -1,0 +1,58 @@
+[
+  {
+    "bookCover": "https://img14.360buyimg.com/n1/s200x200_jfs/t9508/97/2285719018/62961/99c5b1b7/59f299b4Nc9e78adb.jpg",
+    "bookName": "Vue.js实战",
+    "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源 vue社区iView组件贡献者 前端大神梁灏编写 突出实战 应用为王 大鹏展趐 鹰击长空 Vue.js实战助你攀上前端之巅",
+    "bookPrice": 66.50,
+    "bookId": 1
+  },
+  {
+    "bookCover": "https://img14.360buyimg.com/n1/s200x200_jfs/t3049/211/1135504925/129375/cc072102/57c6862aN329b23fd.jpg",
+    "bookName": "Vue.js权威指南",
+    "bookInfo": "与React|Angular三分天下 大热框架首著惊现 Vue之父作序力荐",
+    "bookPrice": 79.90,
+    "bookId": 2
+  },
+  {
+    "bookCover": "https://img11.360buyimg.com/n1/s200x200_jfs/t4540/29/2949953861/229268/af148d19/58f4ec87N10cf0e3a.jpg",
+    "bookName": "Vue2.js揭秘",
+    "bookInfo": "揭秘",
+    "bookPrice": 49.90,
+    "bookId": 3
+  },
+  {
+    "bookCover": "https://img10.360buyimg.com/n1/s200x200_jfs/t10645/126/623859591/78585/9037a3dc/59d5991eN6118ebbd.jpg",
+    "bookName": "Vue2 + ES 6",
+    "bookInfo": "软大师推荐",
+    "bookPrice": 133,
+    "bookId": 4
+  },
+  {
+    "bookCover": "https://img14.360buyimg.com/n1/s200x200_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg",
+    "bookName": "Vue 快速入门",
+    "bookInfo": "新华书店出版社",
+    "bookPrice": 31.4,
+    "bookId": 5
+  },
+  {
+    "bookCover": "https://img11.360buyimg.com/n2/jfs/t16870/33/1747880392/181028/34de377b/5ad6d6f8N1a9f640f.jpg!q80.webp",
+    "bookName": "曾国藩正面侧面",
+    "bookInfo": "套装三册",
+    "bookPrice": 69.90,
+    "bookId": 6
+  },
+  {
+    "bookCover": "https://img10.360buyimg.com/n2/jfs/t15277/21/621663993/789518/6c226bc0/5a331889N4ec502de.jpg!q80.webp",
+    "bookName": "山海经",
+    "bookInfo": "",
+    "bookPrice": 65.00,
+    "bookId": 7
+  },
+  {
+    "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
+    "bookName": "人类的明天",
+    "bookInfo": "探索人类的未来",
+    "bookPrice": 51.00,
+    "bookId": 8
+  }
+]
