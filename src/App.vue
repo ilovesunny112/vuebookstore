@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
     <store-footer></store-footer>
   </div>
 </template>
@@ -48,5 +50,18 @@ export default {
   }
   .swiper-pagination-bullet-active{
     background: #fff;
+  }
+  .book-store-enter {
+    opacity: 0.2;
+  }
+  .book-store-leave {
+
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

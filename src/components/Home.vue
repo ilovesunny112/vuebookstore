@@ -38,6 +38,7 @@ export default {
   created () {
     this.getSlide()
     this.getHot()
+    // console.log(this)
   },
   methods: {
     async getSlide () {

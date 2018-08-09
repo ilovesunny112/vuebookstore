@@ -12,6 +12,7 @@
             <div class="detail">{{book.bookInfo}}</div>
             <div class="price">${{book.bookPrice}}</div>
             <span @click.stop.self="removeBook(book.bookId)">删除</span>
+            <button @click.stop.prevent = "addCollect(book)">加入购物车</button>
           </div>
 
         </li>
@@ -45,8 +46,8 @@ export default {
         }
       })
     },
-    addCollect () {
-
+    addCollect (obj) {
+      this.$store.commit('addCollect', obj)
     },
     async removeBook (bid) {
       let obj = await delBookById(bid)
@@ -57,6 +58,8 @@ export default {
   },
   created () {
     this.getAllBook()
+    console.log(this)
+    this.$notify()
   }
 }
 </script>
@@ -98,6 +101,17 @@ export default {
         position:absolute;
         bottom: 30px;
         color: #f00;
+      }
+      button {
+        background-color: #0085ff;
+        color: #fff;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
       }
     }
   }
