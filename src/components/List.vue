@@ -11,7 +11,7 @@
             <div class="name">{{book.bookName}}</div>
             <div class="detail">{{book.bookInfo}}</div>
             <div class="price">${{book.bookPrice}}</div>
-
+            <span @click.stop.self="removeBook(book.bookId)">删除</span>
           </div>
 
         </li>
@@ -22,7 +22,7 @@
 
 <script>
 import StoreHeader from '../base/StoreHeader'
-import {getAllBook} from '../api'
+import {getAllBook, delBookById} from '../api'
 export default {
   name: 'List',
   components: {
@@ -47,6 +47,12 @@ export default {
     },
     addCollect () {
 
+    },
+    async removeBook (bid) {
+      let obj = await delBookById(bid)
+      // 规范里提到  删除东西返回结果是空对象
+      console.log(obj)
+      this.getAllBook()
     }
   },
   created () {

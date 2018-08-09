@@ -14,14 +14,24 @@ function read (cb) {
   })
 }
 
+function write (str, cb) {
+  fs.writeFile('./book.json', str, 'utf8', function (err) {
+    if (err) {
+      cb(err)
+    } else {
+      cb({})
+    }
+  })
+}
+
 http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With')
   res.setHeader('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
   res.setHeader('X-Powered-By', ' 3.2.1')
-  res.setHeader('Content-Type', 'application/json;charset=utf-8')
+  // res.setHeader('Content-Type', 'application/json;charset=utf-8')
 
-  if (req.method === 'OPTIONS') return res.end(200)
+  if (req.method === 'OPTIONS') return res.end()
 
   let {pathname, query} = url.parse(req.url, true) // 加true 吧 query 转化成对象
   if (pathname === '/sliders') {
@@ -44,7 +54,7 @@ http.createServer((req, res) => {
   //  根据方法 进行不同的处理
   //  get post put
     let id = parseInt(query.id)
-
+    console.log(req.method)
     switch (req.method) { // ?id = 1
       case 'GET':
         if (id) { // 查询一个
@@ -57,16 +67,26 @@ http.createServer((req, res) => {
             res.end(JSON.stringify(books.reverse()))
           })
         }
-        break;
+        break
       case 'POST':
 
-        break;
+        break
       case 'PUT':
 
-        break;
+        break
       case 'DELETE':
-
-        break;
+        if (id) { // 删除一个 根据 id
+          read(function (books) {
+            let result = books.filter(item => item.bookId !== id)
+            console.log(result)
+            write(JSON.stringify(result), function (books) {
+              console.log(books)
+              return res.end(JSON.stringify(books))
+            })
+          })
+        } else {
+        }
+        break
     }
   }
 }).listen(3000)

@@ -26,3 +26,7 @@ export let getAllBook = () => {
 export let getBookById = (bid) => {
   return axios.get('/book?id=' + bid)
 }
+
+export let delBookById = (bid) => {
+  return axios.delete('/book?id=' + bid)
+}
