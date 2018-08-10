@@ -29,7 +29,7 @@ http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With')
   res.setHeader('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
   res.setHeader('X-Powered-By', ' 3.2.1')
-  // res.setHeader('Content-Type', 'application/json;charset=utf-8')
+  res.setHeader('Content-Type', 'application/json;charset=utf-8')
 
   if (req.method === 'OPTIONS') return res.end()
 
@@ -54,7 +54,9 @@ http.createServer((req, res) => {
   //  根据方法 进行不同的处理
   //  get post put
     let id = parseInt(query.id)
-    console.log(req.method)
+    let offset = parseInt(query.offset)
+    let pageSize = 6
+    console.log(offset)
     switch (req.method) { // ?id = 1
       case 'GET':
         if (id) { // 查询一个
@@ -64,7 +66,14 @@ http.createServer((req, res) => {
           })
         } else { // 获取所有图书
           read(function (books) {
-            res.end(JSON.stringify(books.reverse()))
+            books  = books.reverse()
+
+            if (isNaN(offset)) {
+              res.end(JSON.stringify(books))
+            } else {
+              let resBook = books.slice(offset, offset + pageSize)
+              res.end(JSON.stringify(resBook))
+            }
           })
         }
         break

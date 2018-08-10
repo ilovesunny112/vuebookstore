@@ -1,8 +1,10 @@
 <template>
   <div id="notify">
-    <div class="title" v-if="show">
-      {{msg}}
-    </div>
+    <transition name="fade">
+      <div class="title"  v-show="show">
+        {{msg}}
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -12,16 +14,11 @@ export default {
   data () {
     return {
       msg: '你好',
-      show: false
+      show: true
     }
   },
   methods: {
-    init () {
-      this.show = true
-      setTimeout( () => {
-        this.show = false
-      }, 2000)
-    }
+
   }
 }
 </script>
@@ -30,14 +27,22 @@ export default {
   #notify{
     position: absolute;
     left: 50%;
+    top: 50vh;
   }
-  .notify {
-    width: 200px;
+  .title {
+    /*width: 10px;*/
     background-color: rgba(0,0,0,0.8);
     color: #fff;
+    text-align: center;
     /*position: absolute;*/
-    top: 100px;
+    padding:10px 30px;
+    border-radius: 4px;
     margin-left: -50%;
-
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

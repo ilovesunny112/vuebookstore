@@ -1,15 +1,23 @@
-import Vue from 'vue'
 import notify from './notify'
 
-Vue.aaaaa = 1
 let notifyPlugin = {
 
 }
 notifyPlugin.install = function (Vue, options) {
-  console.log(Vue)
+  Vue.prototype.$notify = function (msg) {
+    let V = Vue.extend(notify)
+    let vm = new V()
+    var oDiv = document.createElement('div')
+    document.body.appendChild(oDiv)
+    vm.msg = msg
+    vm.$mount(oDiv)
 
-  Vue.prototype.$notify = function () {
-    notify.init()
+    window.setTimeout(() => {
+      vm.show = false
+      window.setTimeout(() => {
+        document.body.removeChild(vm.$el)
+      }, 600)
+    }, 1000)
   }
 }
 

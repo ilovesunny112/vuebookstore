@@ -1,9 +1,9 @@
 <template>
   <div>
     <store-header :show-back="true">Book List</store-header>
-    <div class="content">
-      <ul class="list">
-        <li v-for="book in bookList" :key="book.bookId" @click = "routeToId(book.bookId)">
+    <div class="content" ref="contentWrapper" @scroll="loadMore">
+      <ul class="list" ref="innerList">
+        <li v-for="book in curBook" :key="book.bookId" @click = "routeToId(book.bookId)">
           <div class="imgwrapper">
             <img :src="book.bookCover" alt="">
           </div>
@@ -23,7 +23,7 @@
 
 <script>
 import StoreHeader from '../base/StoreHeader'
-import {getAllBook, delBookById} from '../api'
+import {getAllBook, delBookById, getBookByOffset} from '../api'
 export default {
   name: 'List',
   components: {
@@ -31,12 +31,19 @@ export default {
   },
   data () {
     return {
-      bookList: []
+      bookList: [],
+      curBook: [],
+      offset: 0
     }
   },
   methods: {
     async getAllBook () {
       this.bookList = await getAllBook()
+    },
+    async getBookOffset () {
+      let newBook = await getBookByOffset(this.offset)
+      this.offset += 6
+      this.curBook = [...this.curBook, ...newBook]
     },
     routeToId (id) {
       this.$router.push({
@@ -48,18 +55,31 @@ export default {
     },
     addCollect (obj) {
       this.$store.commit('addCollect', obj)
+      this.$notify('已加入收藏')
     },
     async removeBook (bid) {
       let obj = await delBookById(bid)
       // 规范里提到  删除东西返回结果是空对象
       console.log(obj)
       this.getAllBook()
+    },
+    loadMore () {
+      var totalH = this.$refs['innerList'].offsetHeight
+      let {scrollTop, offsetHeight} = this.$refs['contentWrapper']
+      window.clearTimeout(this.timer)
+      this.timer = window.setTimeout(() => {
+        console.log(scrollTop + offsetHeight)
+        if (scrollTop + offsetHeight > totalH - 80) {
+          console.log('loading')
+          this.getBookOffset()
+        }
+      }, 300)
     }
   },
   created () {
-    this.getAllBook()
+    // this.getAllBook()
     console.log(this)
-    this.$notify()
+    this.getBookOffset()
   }
 }
 </script>

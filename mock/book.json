@@ -45,28 +45,28 @@
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 72,
     "bookId": 10
   },
   {
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 68,
     "bookId": 13
   },
   {
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 158,
     "bookId": 15
   },
   {
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 21,
     "bookId": 17
   },
   {
@@ -80,7 +80,7 @@
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 888,
     "bookId": 31
   },
   {
@@ -94,28 +94,21 @@
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 11,
     "bookId": 155
   },
   {
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 512,
     "bookId": 66
   },
   {
     "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
     "bookName": "人类的明天",
     "bookInfo": "探索人类的未来",
-    "bookPrice": 51,
+    "bookPrice": 151,
     "bookId": 20
-  },
-  {
-    "bookCover": "https://img10.360buyimg.com/n2/jfs/t20737/70/2397087491/550075/3deaaae9/5b5814f6N4e9948f0.jpg!q80.webp",
-    "bookName": "人类的明天",
-    "bookInfo": "探索人类的未来，这本书代表着未来雨现代人类的童话",
-    "bookPrice": 51,
-    "bookId": 19
   }
 ]

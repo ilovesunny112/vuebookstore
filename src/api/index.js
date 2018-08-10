@@ -30,3 +30,7 @@ export let getBookById = (bid) => {
 export let delBookById = (bid) => {
   return axios.delete('/book?id=' + bid)
 }
+
+export let getBookByOffset = (offset) => {
+  return axios.get('/book?offset=' + offset)
+}
